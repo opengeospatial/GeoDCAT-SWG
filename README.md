@@ -8,7 +8,7 @@ The GeoDCAT profile of DCAT will be implemented as both human and machine-action
 
 The contributor understands that any contributions, if accepted by the OGC Membership, shall be incorporated into GeoDCAT standards documents and that all copyright and intellectual property shall be vested to the OGC.
 
-The GeoDCAT Standards Working Group (SWG) is the group at OGC responsible for the stewardship of the standard, but is working to do as much work in public as possible.
+The [GeoDCAT Standards Working Group (SWG)](https://portal.ogc.org/?m=projects&a=view&project_id=713) (login required) is the group at OGC responsible for the stewardship of the standard, but is working to do as much work in public as possible.
 
 * [Open issues](https://github.com/opengeospatial/GeoDCAT-SWG/issues)
 * [Copy of License Language](https://github.com/opengeospatial/GeoDCAT-SWG/main/LICENSE)
