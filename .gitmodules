@@ -1,0 +1,3 @@
+[submodule "geodcat-ogcapi-records"]
+	path = geodcat-ogcapi-records
+	url = https://github.com/ogcincubator/geodcat-ogcapi-records.git
