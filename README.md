@@ -4,6 +4,8 @@ The purpose of this SWG is to revise, publish, and maintain GeoDCAT, a spatio-te
 
 The GeoDCAT profile of DCAT will be implemented as both human and machine-actionable resources.
 
+Implementations and test cases will be linked or included as sub-modules of this repository to partition governance and access of the core standard from the technical work to test implementations. For example an [OGCAPI-Records based implementation](https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/README.md) will be supported as part of related work and is open to community input.
+
 ## Contributing
 
 The contributor understands that any contributions, if accepted by the OGC Membership, shall be incorporated into GeoDCAT standards documents and that all copyright and intellectual property shall be vested to the OGC.
@@ -12,5 +14,7 @@ The GeoDCAT Standards Working Group (SWG) is the group at OGC responsible for th
 
 * [Open issues](https://github.com/opengeospatial/GeoDCAT-SWG/issues)
 * [Copy of License Language](https://github.com/opengeospatial/GeoDCAT-SWG/main/LICENSE)
+
+It is required that the standard is supported by implementation evidence, so proposals and issues should preferably be made with reference to an implementation and outcomes of regression tests for any test cases defined for the standard.
 
 Pull Requests from contributors are welcomed. However, please note that by sending a Pull Request or Commit to this GitHub repository, you are agreeing to the terms in the Observer Agreement https://portal.ogc.org/files/?artifact_id=92169
