@@ -8,6 +8,13 @@ The GeoDCAT profile of DCAT will be implemented as both human and machine-action
 
 Implementations and test cases will be linked or included as sub-modules of this repository to partition governance and access of the core standard from the technical work to test implementations. For example an [OGCAPI-Records based implementation](https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/README.md) will be supported as part of related work and is open to community input.
 
+## Links
+
+### Prior Art
+
+- [geodcat-ap.ttl](https://github.com/SEMICeu/GeoDCAT-AP/blob/gh-pages/releases/geodcat-ap.ttl)
+- [DCAT-US - mappings to ISO](https://resources.data.gov/resources/podm-field-mapping/)
+
 ## Contributing
 
 The contributor understands that any contributions, if accepted by the OGC Membership, shall be incorporated into GeoDCAT standards documents and that all copyright and intellectual property shall be vested to the OGC.
