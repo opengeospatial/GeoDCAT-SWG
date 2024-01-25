@@ -1,0 +1,236 @@
+Return-Path: <noreply@github.com>
+Received: from compute2.internal (compute2.nyi.internal [10.202.2.46])
+	 by sloti50n60 (Cyrus 3.9.0-alpha0-1108-g3a29173c6d-fm-20231031.005-g3a29173c) with LMTPA;
+	 Mon, 06 Nov 2023 08:00:05 -0500
+X-Cyrus-Session-Id: sloti50n60-1699275605-806702-2-18413111516808719412
+X-Sieve: CMU Sieve 3.0
+X-Spam-known-sender: no
+X-Spam-sender-reputation: 500 (none)
+X-Spam-score: 0.0
+X-Spam-hits: HTML_IMAGE_ONLY_20 0.7, HTML_MESSAGE 0.001, ME_DMARC_IN_FMWL -0.001,
+  ME_HAS_VSSU 0.001, ME_SC_DMARC_IN_FMWL -100, ME_SENDERREP_NEUTRAL 0.001,
+  RCVD_IN_DNSWL_MED -2.3, RCVD_IN_MSPIKE_H2 -0.001, SHORTCIRCUIT -0.0001,
+  SPF_HELO_NONE 0.001, SPF_PASS -0.001, LANGUAGES en, BAYES_USED none,
+  SA_VERSION 3.4.6
+X-Backscatter: NotFound1
+X-Backscatter-Hosts: 
+X-Spam-source: IP='192.30.252.210', Host='out-27.smtp.github.com', Country='US',
+  FromHeader='com', MailFrom='com'
+X-Spam-charsets: plain='UTF-8', html='UTF-8'
+X-Resolved-to: byron@openwork.nz
+X-Delivered-to: byron@openwork.nz
+X-Mail-from: noreply@github.com
+Received: from mx6 ([10.202.2.205])
+  by compute2.internal (LMTPProxy); Mon, 06 Nov 2023 08:00:05 -0500
+Received: from mx6.messagingengine.com (localhost [127.0.0.1])
+	by mailmx.nyi.internal (Postfix) with ESMTP id EFF015C00E3
+	for <byron@openwork.nz>; Mon,  6 Nov 2023 08:00:04 -0500 (EST)
+Received: from mailmx.nyi.internal (localhost [127.0.0.1])
+    by mx6.messagingengine.com (Authentication Milter) with ESMTP
+    id D9198F72F98.D36935C00CC;
+    Mon, 6 Nov 2023 08:00:04 -0500
+ARC-Seal: i=1; a=rsa-sha256; cv=none; d=messagingengine.com; s=fm3; t=
+    1699275604; b=CRut/UacU4QI03VHsLguUElyBk959YpCq+ydrshzoK2Q7bcNV6
+    hzfi3IsiNYhxok6uSyZW361DEAGqcaE5ozdTf48Q4RUqLhMzwRWJ5KHna6L9crGI
+    vkCIGKjrPsgpxrDAG0nI6/C2ndZfIN5ga8hmT4DFw64WGaA2OOxk2DGOP6z7o61h
+    p9EQju0k4yQlwz0yIoZK/cLQl87yyC72JLm9Kg96nRga+q56cR1Y/XIxQmM1bgus
+    W32nctx+kbRLAGlO2leiBxwz6WT1SZH703EScByGQ1a2apF78uA7yaP17tHKJWM5
+    1j86doOf/tN7ibZSjjGQuLlJVD2kmosfFA+A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=
+    messagingengine.com; h=date:from:reply-to:to:cc:message-id
+    :in-reply-to:references:subject:mime-version:content-type
+    :content-transfer-encoding:list-id:list-archive:list-post
+    :list-unsubscribe; s=fm3; t=1699275604; bh=LgE2O4Rtr3PokV+MbLqZy
+    tOCaLU++cMjWrcvKbqLkpU=; b=VtuMWEPXBeERuPsrvOOTChAqYEMfU6RJHxvcI
+    r0RRIYphHJMNsBqRe76314ZWVJs2hIlU1qSIYQ+QZiLePZBOcltTv1vpoBy5oB0T
+    9Y2Q1WPeGG88XsCKHmFrGkIGYrg7GQB7fUlo9O89r8xC8jzCzwaKShntXw1Lv+kw
+    EPXj+osnuYwZKirpE2S5e6XClypVUAQ3i1ejwk2lwt6arasmKpCxCkkjkivAaumn
+    ewxvrNVfPDKcdittISA3TQT9H63AMKO0SWJ9A7uS32JTTFn7KJBOg9Ir7yEzOFn0
+    2t0RBycU9wvMsRoN0YNofpowR+kn8q7PZU1M8K76E8tbqLlsg==
+ARC-Authentication-Results: i=1; mx6.messagingengine.com;
+    x-csa=none;
+    x-me-sender=none;
+    x-ptr=pass smtp.helo=out-27.smtp.github.com
+    policy.ptr=out-27.smtp.github.com;
+    bimi=none (No BIMI records found);
+    arc=none (no signatures found);
+    dkim=pass (1024-bit rsa key sha256) header.d=github.com
+    header.i=@github.com header.b=CQCkWYhw header.a=rsa-sha256
+    header.s=pf2023;
+    dmarc=pass policy.dwl=pass policy.published-domain-policy=reject
+    policy.applied-disposition=none policy.evaluated-disposition=none
+    (p=reject,has-list-id=yes,d=none,d.eval=none) policy.policy-from=p
+    header.from=github.com;
+    iprev=pass smtp.remote-ip=192.30.252.210 (out-27.smtp.github.com);
+    spf=pass smtp.mailfrom=noreply@github.com
+    smtp.helo=out-27.smtp.github.com
+X-ME-Authentication-Results: mx6.messagingengine.com;
+    x-aligned-from=domain_pass (Domain match);
+    x-return-mx=pass header.domain=github.com policy.is_org=yes
+      (MX Records found: alt2.aspmx.l.google.com,alt3.aspmx.l.google.com,alt4.aspmx.l.google.com,aspmx.l.google.com,alt1.aspmx.l.google.com);
+    x-return-mx=pass smtp.domain=github.com policy.is_org=yes
+      (MX Records found: alt1.aspmx.l.google.com,alt2.aspmx.l.google.com,alt3.aspmx.l.google.com,alt4.aspmx.l.google.com,aspmx.l.google.com);
+    x-tls=pass smtp.version=TLSv1.3 smtp.cipher=TLS_AES_256_GCM_SHA384
+      smtp.bits=256/256;
+    x-vs=clean score=-31 state=0
+Authentication-Results: mx6.messagingengine.com;
+    x-csa=none;
+    x-me-sender=none;
+    x-ptr=pass smtp.helo=out-27.smtp.github.com
+      policy.ptr=out-27.smtp.github.com
+Authentication-Results: mx6.messagingengine.com;
+    bimi=none (No BIMI records found)
+Authentication-Results: mx6.messagingengine.com;
+    arc=none (no signatures found)
+Authentication-Results: mx6.messagingengine.com;
+    dkim=pass (1024-bit rsa key sha256) header.d=github.com
+      header.i=@github.com header.b=CQCkWYhw header.a=rsa-sha256
+      header.s=pf2023;
+    dmarc=pass policy.dwl=pass policy.published-domain-policy=reject
+      policy.applied-disposition=none policy.evaluated-disposition=none
+      (p=reject,has-list-id=yes,d=none,d.eval=none) policy.policy-from=p
+      header.from=github.com;
+    iprev=pass smtp.remote-ip=192.30.252.210 (out-27.smtp.github.com);
+    spf=pass smtp.mailfrom=noreply@github.com
+      smtp.helo=out-27.smtp.github.com
+X-ME-VSSU: VW5zdWI9aHR0cHM6Ly9naXRodWIuY29tL25vdGlmaWNhdGlvbnMvdW5zdWJzY3JpYmUtYX
+    V0aC9BQUlKQ1BDTDc1SUlON1JaWjRQSVZSRFlERE5ORkFWQ05GU002QUFBQUFBNFhTUDJI
+    MlZISTJEU01WUVdJWDNMTVY0M09TTFRPTjJXS1EzUE5WV1dLM1RVSE1ZVE9PSlVHNDNERU
+    1aVkhB
+X-ME-VSSU: VW5zdWI9aHR0cHM6Ly9naXRodWIuY29tL25vdGlmaWNhdGlvbnMvdW5zdWJzY3JpYmUvQU
+    FJSkNQR1lMSlM1U1hQUjVCWFg3WUxZREROTkZBTkNORlNNNkFBQUFBQTRYU1AySFk
+X-ME-VSSU: VW5zdWI9bWFpbHRvOnVuc3ViK0FBSUpDUEhCRjdXVlpENlBXTUM3V0Q2REtZSzVGRVZCTk
+    hISENBQVgyRUByZXBseS5naXRodWIuY29t
+X-ME-VSCause: gggruggvucftvghtrhhoucdtuddrgedvkedruddugedggeeiucetufdoteggodetrfdotf
+    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdggtfgfnhhsuhgsshgtrhhisggvpdfu
+    rfetoffkrfgpnffqhgenuceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnh
+    htshculddquddttddmnegoufhushhpvggtthffohhmrghinhculdegledmnedhkfhnvhhi
+    shhisghlvgcufihorhgushculddvtddmnecujfgurhepfffhrhfvvefkjghfufggtgfgph
+    ejgedujfesrgejreertddtjeenucfhrhhomheprfgvthgvrhcurfgrrhhslhhoficuoehn
+    ohhtihhfihgtrghtihhonhhssehgihhthhhusgdrtghomheqnecuggftrfgrthhtvghrnh
+    epkefgfeegfeejheevieelhfeggedvkeehuefhjeevgeeukedtueetledvgfekudevnecu
+    ffhomhgrihhnpehgihhthhhusgdrihhopdhgihhthhhusgdrtghomhenucfkphepudelvd
+    drfedtrddvhedvrddvuddtnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehi
+    nhgvthepudelvddrfedtrddvhedvrddvuddtpdhhvghlohepohhuthdqvdejrdhsmhhtph
+    drghhithhhuhgsrdgtohhmpdhmrghilhhfrhhomhepoehnohhrvghplhihsehgihhthhhu
+    sgdrtghomheqpdhnsggprhgtphhtthhopedupdhrtghpthhtohepoegshihrohhnsehoph
+    gvnhifohhrkhdrnhiiqe
+X-ME-VSScore: -31
+X-ME-VSCategory: clean
+X-ME-CSA: none
+Received-SPF: pass
+    (github.com: 192.30.252.210 is authorized to use 'noreply@github.com' in 'mfrom' identity (mechanism 'ip4:192.30.252.0/22' matched))
+    receiver=mx6.messagingengine.com;
+    identity=mailfrom;
+    envelope-from="noreply@github.com";
+    helo=out-27.smtp.github.com;
+    client-ip=192.30.252.210
+Received: from out-27.smtp.github.com (out-27.smtp.github.com [192.30.252.210])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mx6.messagingengine.com (Postfix) with ESMTPS id D36935C00CC
+	for <byron@openwork.nz>; Mon,  6 Nov 2023 08:00:03 -0500 (EST)
+Received: from github.com (hubbernetes-node-e11518c.ash1-iad.github.net [10.56.200.56])
+	by smtp.github.com (Postfix) with ESMTPA id 65F4360106D
+	for <byron@openwork.nz>; Mon,  6 Nov 2023 05:00:02 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=github.com;
+	s=pf2023; t=1699275602;
+	bh=LgE2O4Rtr3PokV+MbLqZytOCaLU++cMjWrcvKbqLkpU=;
+	h=Date:From:Reply-To:To:Cc:In-Reply-To:References:Subject:List-ID:
+	 List-Archive:List-Post:List-Unsubscribe:From;
+	b=CQCkWYhwv+H/dfACJ4HpkMDAoqJ9kRrYaw4Mpa0zm/ndK32rAS8BlcfSNJ13t9PRP
+	 86vygzYCx7yyHk0F9JWmTseWL+0edp3YxF5B18L2XN3tB9X5De+ZrBedaRpM6wtOYM
+	 ag39V4dd9bNlh1RWz8MelEeUa/P7JQPGGKG/APNw=
+Date: Mon, 06 Nov 2023 05:00:02 -0800
+From: Peter Parslow <notifications@github.com>
+Reply-To: opengeospatial/GeoDCAT-SWG <reply+AAIJCPHBF7WVZD6PWMC7WD6DKYK5FEVBNHHHCAAX2E@reply.github.com>
+To: opengeospatial/GeoDCAT-SWG <GeoDCAT-SWG@noreply.github.com>
+Cc: Byron Cochrane <byron@openwork.nz>, 
+ Author <author@noreply.github.com>
+Message-ID: <opengeospatial/GeoDCAT-SWG/issues/2/1794762358@github.com>
+In-Reply-To: <opengeospatial/GeoDCAT-SWG/issues/2@github.com>
+References: <opengeospatial/GeoDCAT-SWG/issues/2@github.com>
+Subject: Re: [opengeospatial/GeoDCAT-SWG] Prior Art Review (Issue #2)
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_6548e35262b7f_71d8044149954";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Precedence: list
+X-GitHub-Sender: PeterParslow
+X-GitHub-Recipient: ByronCinNZ
+X-GitHub-Reason: author
+List-ID: opengeospatial/GeoDCAT-SWG <GeoDCAT-SWG.opengeospatial.github.com>
+List-Archive: https://github.com/opengeospatial/GeoDCAT-SWG
+List-Post: <mailto:reply+AAIJCPHBF7WVZD6PWMC7WD6DKYK5FEVBNHHHCAAX2E@reply.github.com>
+List-Unsubscribe: <mailto:unsub+AAIJCPHBF7WVZD6PWMC7WD6DKYK5FEVBNHHHCAAX2E@reply.github.com>,
+ <https://github.com/notifications/unsubscribe/AAIJCPGYLJS5SXPR5BXX7YLYDDNNFANCNFSM6AAAAAA4XSP2HY>
+X-Auto-Response-Suppress: All
+destinations: byron@openwork.nz
+X-GitHub-Recipient-Address: byron@openwork.nz
+
+
+----==_mimepart_6548e35262b7f_71d8044149954
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+[UK Cross-Government Metadata Exchange Model](https://co-cddo.github.io/ukgov-metadata-exchange-model/): a "minimal interoperability" approach defining a subset of DCAT to use. "geo" extension proposed (by me, on their request): [Geospatial metadata - in progress.docx](https://github.com/opengeospatial/GeoDCAT-SWG/files/13266759/Geospatial.metadata.-.in.progress.docx)
+
+-- 
+Reply to this email directly or view it on GitHub:
+https://github.com/opengeospatial/GeoDCAT-SWG/issues/2#issuecomment-1794762358
+You are receiving this because you authored the thread.
+
+Message ID: <opengeospatial/GeoDCAT-SWG/issues/2/1794762358@github.com>
+----==_mimepart_6548e35262b7f_71d8044149954
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<p></p>
+<p dir=3D"auto"><a href=3D"https://co-cddo.github.io/ukgov-metadata-excha=
+nge-model/" rel=3D"nofollow">UK Cross-Government Metadata Exchange Model<=
+/a>: a "minimal interoperability" approach defining a subset of DCAT to u=
+se. "geo" extension proposed (by me, on their request): <a href=3D"https:=
+//github.com/opengeospatial/GeoDCAT-SWG/files/13266759/Geospatial.metadat=
+a.-.in.progress.docx">Geospatial metadata - in progress.docx</a></p>
+
+<p style=3D"font-size:small;-webkit-text-size-adjust:none;color:#666;">&m=
+dash;<br />Reply to this email directly, <a href=3D"https://github.com/op=
+engeospatial/GeoDCAT-SWG/issues/2#issuecomment-1794762358">view it on Git=
+Hub</a>, or <a href=3D"https://github.com/notifications/unsubscribe-auth/=
+AAIJCPCL75IIN7RZZ4PIVRDYDDNNFAVCNFSM6AAAAAA4XSP2H2VHI2DSMVQWIX3LMV43OSLTO=
+N2WKQ3PNVWWK3TUHMYTOOJUG43DEMZVHA">unsubscribe</a>.<br />You are receivin=
+g this because you authored the thread.<img src=3D"https://github.com/not=
+ifications/beacon/AAIJCPGXSEK4QS4BPZCGHOTYDDNNFA5CNFSM6AAAAAA4XSP2H2WGG33=
+NNVSW45C7OR4XAZNMJFZXG5LFINXW23LFNZ2KUY3PNVWWK3TUL5UWJTTK7HTHM.gif" heigh=
+t=3D"1" width=3D"1" alt=3D"" /><span style=3D"color: transparent; font-si=
+ze: 0; display: none; visibility: hidden; overflow: hidden; opacity: 0; w=
+idth: 0; height: 0; max-width: 0; max-height: 0; mso-hide: all">Message I=
+D: <span>&lt;opengeospatial/GeoDCAT-SWG/issues/2/1794762358</span><span>@=
+</span><span>github</span><span>.</span><span>com&gt;</span></span></p>
+<script type=3D"application/ld+json">[
+{
+"@context": "http://schema.org",
+"@type": "EmailMessage",
+"potentialAction": {
+"@type": "ViewAction",
+"target": "https://github.com/opengeospatial/GeoDCAT-SWG/issues/2#issueco=
+mment-1794762358",
+"url": "https://github.com/opengeospatial/GeoDCAT-SWG/issues/2#issuecomme=
+nt-1794762358",
+"name": "View Issue"
+},
+"description": "View this Issue on GitHub",
+"publisher": {
+"@type": "Organization",
+"name": "GitHub",
+"url": "https://github.com"
+}
+}
+]</script>=
+
+----==_mimepart_6548e35262b7f_71d8044149954--
