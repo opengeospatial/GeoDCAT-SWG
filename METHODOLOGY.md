@@ -16,4 +16,4 @@ Instances of ISO 19139 (or structured schemas using XML or other languages) can 
 
 ## Implementation Testing
 
-Using the methodology above, concrete examples can be tested directly for transformability to GeoDCAT, and hence GeoDCAT capability to describe all elements deemed necessary to describe.
+Using the methodology above, concrete examples can be tested directly for transformability to GeoDCAT, and hence GeoDCAT capability to define all elements deemed necessary to describe data sets.
