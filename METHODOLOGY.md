@@ -1,4 +1,4 @@
-# Methodology Proposal for GeoDCAT
+# Methodology : scope and testing 
 
 ## Requirements identification
 
