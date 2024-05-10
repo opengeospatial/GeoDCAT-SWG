@@ -14,7 +14,7 @@ GeoDCAT can be incrementally developed from multiple existing applications in di
 
 Instances of ISO 19139 (or structured schemas using XML or other languages) can be translated using off-the-shelf tools to JSON then semantically mapped to DCAT, as per OGC API Records and STAC schema.
 
-![](https://lucid.app/publicSegments/view/3f621317-a963-4159-bdec-af4602fa9751/image.png)
+![](https://lucid.app/publicSegments/view/0d5f7552-6631-4571-a631-4d085e088f1e/image.png)
 
 ## Implementation Testing
 
