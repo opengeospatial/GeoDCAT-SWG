@@ -33,7 +33,7 @@ Particular focus will be placed on use of OGC modular “building blocks for loc
 
 During the virtual code sprint, there will be an opportunity for joint discussion with all participants on the goals and objectives of the event, as well as the final briefing of findings and opinions of the participants. However, the majority of the time will be spent in collaboration between participants in active coding.
 
-Use Case are being collected at
+Use Case are being collected at https://github.com/opengeospatial/GeoDCAT-SWG/issues/17
 
 The Sprint will take place on GoToMeeting and Discord platforms from 8:00am to 6:30pm (Australian Eastern) each day from November 18-19, 2024.
 
