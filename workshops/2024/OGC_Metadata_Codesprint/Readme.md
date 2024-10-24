@@ -4,6 +4,8 @@
 The Open Geospatial Consortium (OGC) GeoDCAT SWG and MetaCat DWG invites developers to the 2024 OGC Metadata Code Sprint, to be held November 18-19, 2024. 
 Registration is free and open to the public.
 
+For registration details please see the [announcement](https://www.ogc.org/ogc-events/the-november-2024-ogc-metadata-code-sprint/)
+
 > **_NOTE:_** A pre-event webinar will be held on 24 October 2024 at 19:00 Australian Eastern Time  (08:00 UTC) to review proposals and use cases. Please attend, share your ideas and build teams to work on these during the Code Sprint. GoTo Meeting link - https://meet.goto.com/791037533
 
 This hybrid online and in-person Sprint will focus on standards related to creation, storage and exchange of metadata for geospatial information. 
