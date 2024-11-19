@@ -1,4 +1,4 @@
- # Developers are invited to the November 2024 OGC Metadata Code Sprint
+# Developers are invited to the November 2024 OGC Metadata Code Sprint
 ## This hybrid event will explore current and developing metadata standards for geospatial resources, producing guidance on their use and application separately or in combination.
 
 The Open Geospatial Consortium (OGC) GeoDCAT SWG and MetaCat DWG invites developers to the 2024 OGC Metadata Code Sprint, to be held November 18-19, 2024. 
@@ -43,3 +43,6 @@ For more information on the Sprint, including objectives, agenda, and registrati
 Information on other OGC Sprints or events for developers can be found on the OGC Developer Events wiki on GitHub.
 
 For more technical information about OGC Standards, including how to get started, links to each Standards’ GitHub page, official Standards documents, compliance, and more, visit developer.ogc.org
+
+## Engineering Report
+The Engineering Report is being drafted during the event in the related "developer events" repository: https://github.com/ogcincubator/developer-events/tree/master/2024/Metadata-Codesprint-Nov24
